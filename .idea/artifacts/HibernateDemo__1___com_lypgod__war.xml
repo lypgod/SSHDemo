@@ -1,0 +1,8 @@
+<component name="ArtifactManager">
+  <artifact type="war" name="HibernateDemo (1) (com.lypgod):war">
+    <output-path>$PROJECT_DIR$/HibernateDemo/target</output-path>
+    <root id="archive" name="HibernateDemo.war">
+      <element id="artifact" artifact-name="HibernateDemo (1) (com.lypgod):war exploded" />
+    </root>
+  </artifact>
+</component>
