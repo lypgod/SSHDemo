@@ -1,23 +1,22 @@
-package com.lypgod.test.Entities;
+package com.lypgod.test.Entities.OneToOne;
 
 import javax.persistence.*;
 
-@Entity
-public class Wife {
+//@Entity
+public class Husband {
     @Id
     @GeneratedValue
     private int id;
     private String name;
-    @OneToOne(fetch = FetchType.LAZY)
-    @JoinColumn(name = "husbandId")
-    private Husband husband;
+    @OneToOne(mappedBy = "husband", cascade = CascadeType.ALL, orphanRemoval = true, fetch = FetchType.LAZY)
+    private Wife wife;
 
-    public Husband getHusband() {
-        return husband;
+    public Wife getWife() {
+        return wife;
     }
 
-    public void setHusband(Husband husband) {
-        this.husband = husband;
+    public void setWife(Wife wife) {
+        this.wife = wife;
     }
 
     public int getId() {

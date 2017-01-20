@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<dataSource name="MySQL - hibernate_demo@localhost">
+  <database-model serializer="dbm" rdbms="MYSQL" format-version="2.6">
+    <schema id="1" name="hibernate_demo">
+      <visible>1</visible>
+    </schema>
+    <schema id="2" name="information_schema"/>
+    <schema id="3" name="MDMAgent"/>
+    <schema id="4" name="mysql"/>
+    <schema id="5" name="performance_schema"/>
+    <schema id="6" name="sys"/>
+    <table id="7" parent="1" name="Person"/>
+    <table id="8" parent="1" name="Phone"/>
+    <table id="9" parent="1" name="hibernate_sequence"/>
+    <column id="10" parent="7" name="id">
+      <mandatory>1</mandatory>
+      <data-type>int(11)|0</data-type>
+    </column>
+    <column id="11" parent="7" name="name">
+      <data-type>varchar(255)|0</data-type>
+    </column>
+    <key id="12" parent="7" name="PRIMARY">
+      <columns>id</columns>
+      <primary>1</primary>
+    </key>
+    <column id="13" parent="8" name="id">
+      <mandatory>1</mandatory>
+      <data-type>int(11)|0</data-type>
+    </column>
+    <column id="14" parent="8" name="phoneNumber">
+      <data-type>varchar(255)|0</data-type>
+    </column>
+    <column id="15" parent="8" name="person_id">
+      <data-type>int(11)|0</data-type>
+    </column>
+    <index id="16" parent="8" name="FKmw13yfsjypiiq0i1osdkaeqpg">
+      <columns>person_id</columns>
+      <desc-columns></desc-columns>
+    </index>
+    <index id="17" parent="8" name="UK_s0776r87eestlhygi4ubk0wl0">
+      <columns>phoneNumber</columns>
+      <desc-columns></desc-columns>
+      <unique>1</unique>
+    </index>
+    <key id="18" parent="8" name="PRIMARY">
+      <columns>id</columns>
+      <primary>1</primary>
+    </key>
+    <key id="19" parent="8" name="UK_s0776r87eestlhygi4ubk0wl0">
+      <columns>phoneNumber</columns>
+      <underlying-index>UK_s0776r87eestlhygi4ubk0wl0</underlying-index>
+    </key>
+    <foreign-key id="20" parent="8" name="FKmw13yfsjypiiq0i1osdkaeqpg">
+      <columns>person_id</columns>
+      <ref-key>~.Person.PRIMARY</ref-key>
+      <cascade-update-rule>restrict</cascade-update-rule>
+      <cascade-delete-rule>restrict</cascade-delete-rule>
+    </foreign-key>
+    <column id="21" parent="9" name="next_val">
+      <data-type>bigint(20)|0</data-type>
+    </column>
+  </database-model>
+</dataSource>
